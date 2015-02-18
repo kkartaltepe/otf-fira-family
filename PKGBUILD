@@ -1,5 +1,5 @@
 pkgname=otf-fira-family
-pkgver=1.0
+pkgver=1.1
 pkgrel=1
 pkgdesc="Firefox Fira-sans fonts"
 arch=(any)
@@ -10,6 +10,8 @@ install=$pkgname.install
 package() {
     install -d "$pkgdir/usr/share/fonts/OTF"
     install -m644 "$srcdir/Fira-master/otf/"*.otf "$pkgdir/usr/share/fonts/OTF/"
+    install -d "$pkgdir/usr/share/licenses/$pkgname"
+    install -m644 "$srcdir/Fira-master/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 
